@@ -12,3 +12,5 @@ sitios de referencia:
 - https://hoffmannmusica.com.ar/
 
 - https://www.kaironmusic.com.ar/
+
+- https://trello.com/b/8tQn0riE/proyectointegradordhgrupo13
