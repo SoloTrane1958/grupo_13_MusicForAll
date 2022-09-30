@@ -9,3 +9,6 @@ app.listen(3000, ()=>{
 app.get("/", (req, res) =>{
     res.sendFile(__dirname + "/views/index.html");
 })
+app.get("/Producto", (req, res) =>{
+    res.sendFile(__dirname + "/views/Detalles-Producto.html");
+})
