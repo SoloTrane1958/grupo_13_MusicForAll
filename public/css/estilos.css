@@ -3,3 +3,14 @@ body
     background-color: #1eaaeb;
 
 }
+.logo_contenedor{
+    display: flex;
+    box-sizing: border-box;
+    margin-bottom: 100px;
+    width: 200px;
+    height: auto;
+}
+.logo_contenedor img{
+    width: 100%;
+    height: auto;
+}
