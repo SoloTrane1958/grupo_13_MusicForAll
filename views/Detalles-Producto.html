@@ -4,44 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/estilos.css" rel ="stylesheet">
+    <link href="css/detalles-productos.css" rel ="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
     <title></title>
 </head>
 <body>
     <header>
-        <div>
+        <div class="top-header">
             <div class="logo_contenedor">
                 <img src="Imagenes/Logov2.png" rel ="icon">
             </div>
+            <div class="form" action="#" method="GET">
+                <input type="text" class="search_bar" placeholder="Busca productos, marcas ">
+                <button type="submit" class="search_btn"><i class="fa-solid fa-magnifying-glass search_logo"></i></button>
+            </div>
+        </div>  
             <div>
-                <nav>
-                    <ul>
+                <nav class="navbar">
+                    <ul class="bottom-nav">
                         <li><a href="#">Categoria1</a></li>
                         <li><a href="#">Categoria2</a></li>
                         <li><a href="#">Categoria3</a></li>
                         <li><a href="#">Categoria4</a></li>
                     </ul>
-                    <ul>
+                    <ul class="top-nav">
                         <li><a href="#">Perfil</a></li>
                         <li><a href="#">Carrito de Compras</a></li>
                     </ul>
                 </nav>
             </div>
-              <div class="form" action="#" method="GET">
-                    <input type="text" class="search_bar" placeholder="Busca productos, marcas ">
-                    <button type="submit" class="search_btn"><i class="fa-solid fa-magnifying-glass search_logo"></i></button>
-              </div>
-        </div>
     </header>
     <main>
-        <section>
+        <section class="producto">
             <img src="https://http2.mlstatic.com/D_NQ_NP_704227-MLA44115124280_112020-W.jpg" alt="Img-Producto" width="180px">
-            <div>
+            <div class="cuadro-detalle">
                 <p>Guitarra</p>
                 <p>$4800</p>
                 <p>% "descuento"</p>
-                <div>
+                <div class="agregar-extra">
                     <button>Agregar al carrito</button>
                     <button>-</button>
                     <button>+</button>
@@ -79,21 +79,18 @@
         </div>
         <div>
             <h4>Defensa al consumidor</h4>
-            <p>Usted tiene derecho a comprar obligadamente</p>
         </div>
         <div>
             <h4>Nuestras redes</h4>
-            <p><a href="#">Nuestro Instagram</a></p>
-            <p><a href="#">Nuestro Facebook</a></p>
-            <p><a href="#">Nuestro Gmail</a></p>
+            <p><a href="#">Instagram</a></p>
+            <p><a href="#">Facebook</a></p>
+            <p><a href="#">Twitter</a></p>
         </div>
         <div>
             <h4>Soporte</h4>
-            <p>"mail de contacto"</p>
         </div>
         <div>
             <h4>Sobre nosotros</h4>
-            <p>Somos una pagina dispuesta a vender productos de calidad al mejor precio posible</p>
         </div>
     </footer>
 </body>
