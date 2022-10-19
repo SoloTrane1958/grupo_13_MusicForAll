@@ -9,7 +9,7 @@ app.listen(3000, ()=>{
 app.get("/", (req, res) =>{
     res.sendFile(__dirname + "/views/index.html");
 })
-app.get("/Producto", (req, res) =>{
+app.get("/producto", (req, res) =>{
     res.sendFile(__dirname + "/views/Detalles-Producto.html");
 })
 
@@ -18,4 +18,7 @@ app.get("/login", (req, res) =>{
 })
 app.get("/register", (req, res) =>{
     res.sendFile(__dirname + "/views/register.html");
+})
+app.get("/carrito", (req, res) =>{
+    res.sendFile(__dirname + "/views/carritoDeCompras.html");
 })
