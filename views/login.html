@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/index.css" rel ="stylesheet">
+    <link href="css/login.css" rel ="stylesheet">
+    <!--<link href="css/estilos.css" rel ="stylesheet">-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
    
     
@@ -12,9 +13,7 @@
 </head>
 <body>
     <header>
-        <div class="logo_contenedor">
-            <img src="Imagenes/Logo_PC.png" rel ="icon">
-        </div>
+        
         <div>
             <nav>
                 <ul>
@@ -36,35 +35,37 @@
     </div>
     </header>
     <main>
-        <div class="iniciar sesión">
+        <div class="login_box">
+            
+          <img class= "logo_contenedor" src="Imagenes/Logo_Oficial.jpg" rel ="icon">
+            
+          <div class="iniciar_sesión">
         
-            <h1>iniciar sesión</h1>
-            <form action="/" method="POST">
-               <!--igresa mail de usuario-->
-               <p><label for="Email">
-                   Email
-                   <input id="Email" type="text" placeholder="Ingrese Email">
-               </label></p>
+             <h1>iniciar sesión</h1>
+             <form action="/" method="POST">
+                 <!--igresa mail de usuario-->
+                 <p><label for="Email">
+                    Email
+                     <input id="Email" type="text" placeholder="Ingrese Email">
+                 </label></p>
                
-               <div>
-                    <!-- Ingresa contraseña -->
-                   <p><label for="contraseña">
-                           contraseña
-                            <input id="contraseña" type="password" placeholder="ingrese contraseña">
-                    </label></p>
-               </div>
-               <p><input type="submit" value="Continuar"></p>
-               <div>
-                   <a href="#">Crear cuenta</a>
-               </div>
-               <p><div>
-                   <a href="#">Perdi mi contraseña</a>
-               </div></p>
-               
-
+                 <div>
+                     <!-- Ingresa contraseña -->
+                      <p><label for="contraseña">
+                              contraseña
+                              <input id="contraseña" type="password" placeholder="ingrese contraseña">
+                      </label></p>
+                   </div>
+                  <p><input type="submit" value="Continuar"></p>
+                 <div>
+                      <a href="#">Crear cuenta</a>
+                 </div>
+                  <p><div>
+                       <a href="#">Perdi mi contraseña</a>
+                  </div></p>
             </form>
-
-    </div>
+         </div>
+        </div>
     </main>
 </body>
 </html>
