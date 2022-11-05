@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/index.css" rel ="stylesheet">
+    <link href="css/estilos.css" rel ="stylesheet">
     <link href="css/register.css" rel ="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
    
@@ -12,10 +12,12 @@
 </head>
 <body>
     <header>
+        
         <div class="logo_contenedor">
             <img src="Imagenes/Logo_PC.png" rel ="icon">
         </div>
         <div>
+            
             <nav>
                 <ul>
                     <li><a href="#">Categoria1</a></li>
@@ -34,30 +36,61 @@
                 <button type="submit" class="search_btn"><i class="fa-solid fa-magnifying-glass search_logo"></i></button>
             </div>
     </header>
-    <body>
+    <main>
+    
         <div class="register_container">
+            <div class="logo_contenedor">
+                <img src="Imagenes/Logo_PC.png" alt="logo">
+            </div>
+            <div class="registro">
+                <h1>Registrate</h1>
+                
+                <form action = "/" method="GET" >
+                    <div>                      
+                        <label for="Nombre">
+                            Nombre
+                            <input type="text" placeholder= "Nombre" size="15" name="nombre" id="nombre">
+                        </label>
+                    </div>
+                    <div>                      
+                        <label for="Apellido">
+                            Apellido
+                            <input type="text" placeholder= "Apellido size="15" name="apellido" id="apellido    ">
+                        </label>
+                    </div>
 
-            <form action = "/" method="GET" >
-                <div>                       
-                    <input type="text" placeholder= "Nombre y Apellido" size="15" name="nombreApellido" id="nombreApellido">
-                </div>
-                <div>
-                    <input type="text" name="username" id="username" placeholder= "Nombre de usuario" size="15" > 
-               </div>    
-               <div>
-                    <input type="password" name="password" id="password" placeholder= "Contraseña" size="15" > 
-               </div>
-               <div>
-                    <input type="password" name="password" id="password" placeholder= "Repite la contraseña" size="15" > 
-                </div>         
-               <div>  
-                    <input type="email" name="E-mail" id="email" placeholder="E-mail" size="15"> 
-                </div>
-                 
-                 
-                    <button type="submit">Continuar</button> 
-                    <button type="">Iniciar Sesión</button> 
-            </form>
+                    <div>                    
+                        <label for = "usuario">
+                            Usuario
+                            <input type="text" name="username" id="username" placeholder= "Nombre de usuario" size="15" > 
+                        </label>                        
+                    </div>    
+                    <div>                            
+                        <label for = "password">
+                            Contraseña
+                            <input type="text" name="password" id="password" placeholder= "Contraseña" size="15" > 
+                        </label>                        
+                    </div>
+                    <div>                            
+                        <label for = "password">
+                            Repite la contraseña
+                            <input type="text" name="password" id="password" placeholder= "Repite la contraseña" size="15" > 
+                        </label>
+                    </div>         
+                    <div>                          
+                        <label for = "email">
+                            E-mail
+                            <input type="email" name="E-mail" id="email" placeholder= "E-mail" size="15" > 
+                        </label>                       
+                    </div>                    
+                    
+                        <input type="submit" value="Continuar"></input   > 
+                        <div>
+                            <a href="#">Iniciar Sesion</a>
+                        </div>
+                </form>
+            </div>
         </div>
-    </body>
+    </main>
+</body>     
 </html>
