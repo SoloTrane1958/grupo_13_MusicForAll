@@ -6,58 +6,6 @@
 body
 {
     background-color: #fff;
-
-}
-/*header*/
-header{
-    background-color: #fb6a6a;
-}
-.logo_contenedor img{
-    width: 150px;
-    height: auto;
-}
-.search_bar{
-    height:20px;
-    width: 210px;
-}
-.search_btn {
-    display: flex;
-    box-sizing: border-box;
-    background-color: #ebebeb;
-    border:none;
-    color: black;
-    font-size: 20px;
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-}
-header div.logo{
-    display: flex;
-    flex-basis: 50vw;
-    max-width: 250px;   
-    margin-left: 20px;
-    margin-top: 20px;
-    margin-right: 20px; 
-    align-items: center;    
-}
-.search_logo{
-    align-self: center;
-}
-.top-header{
-    display: flex;
-    align-items: center;
-}
-.form{
-    display: flex;
-    max-width: 100%;
-}
-.bottom-nav{
-    display: flex;
-    justify-content:space-between;
-}
-.bottom-nav li{
-    margin: 10px;
-    margin-left: 16px;
 }
 /*main*/
 main{
@@ -65,12 +13,67 @@ main{
 }
 .producto{
     display: flex;
+    justify-content: space-between;
+}
+.descuento{
+    color: green;
+    padding: 5px;
+    font-size: 20px;
+}
+.nombre{
+    color: #000;
+    padding: 5px;
+    font-size: 20px;
+}
+.precio{
+    color: rgb(114, 118, 114);
+    padding: 5px;
+    font-size: 20px;
 }
 .cuadro-detalle{
     background-color: #f9f9f9;
-    border: 1px solid #000;
+    border: 1px solid #cdcdcd;
+    text-align: center;
+    width: 200px;
 }
-/*footer*/
-footer{
-    background-color: #ebebeb;
+.CaracteristicasBox{
+    border: 1px solid #000;
+    max-width: 500px;
+}
+.pCaracteristicas{
+    border: ridge;
+    padding: 5px;
+}
+.descripcion{
+    color: grey;
+    font-size: 20px;
+}
+.imgRelacionadas{
+    width: 250px;
+    border: solid 1px #d7d4d4;
+    background-color: #ffffff;
+    /* padding: 5px; */
+    margin-left: 40px;
+}
+@media (min-width: 768px){
+    .producto img{
+    border: 1px #b3b3b3 solid;
+    width: 300px;
+    margin-left: 50px;
+    }
+    .descripcion{
+        font-size: 20px;
+    }
+}
+@media (min-width: 1200px){
+    .descripcion{
+        font-size: 28px;
+    }
+    .imgRelacionadas{
+        width: 250px;
+        border: solid 1px #d7d4d4;
+        background-color: #ffffff;
+        /* padding: 5px; */
+        margin-left: 40px;
+    }
 }
