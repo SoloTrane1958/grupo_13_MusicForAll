@@ -1,24 +1,19 @@
 const express = require('express');
 const app = express();
-app.use(express.static('public'));
+const path = require('path');
+const userRoutes = require('./routes/user');
 
 app.listen(3000, ()=>{
     console.log("El servidor esta funcionando");
-})
+});
 
-app.get("/", (req, res) =>{
-    res.sendFile(__dirname + "/views/index.html");
-})
-app.get("/producto", (req, res) =>{
-    res.sendFile(__dirname + "/views/Detalles-Producto.html");
-})
+app.use(express.static('public'));
 
-app.get("/login", (req, res) =>{
-    res.sendFile(__dirname + "/views/login.html");
-})
-app.get("/register", (req, res) =>{
-    res.sendFile(__dirname + "/views/register.html");
-})
-app.get("/carrito", (req, res) =>{
-    res.sendFile(__dirname + "/views/carritoDeCompras.html");
-})
+app.set('view engine', 'ejs');
+
+app.set('views', path.join(__dirname, '/views'));
+
+app.use('/user', userRoutes);
+
+
+module.exports = app;
