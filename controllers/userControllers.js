@@ -1,18 +1,18 @@
-let userControllers= {
+const userControllers = {
     index: function(req,res, next){
         res.render('index');
     },
     detallesProductos: function(req,res, next){
-        res.render('detallesProductos');
+        res.render('detallesProducto');
     },
     login: function (req,res, next){
         res.render('login');
     },
     register: function(req, res, next) {
-        res.render('register.ejs')
+        res.render('register')
     },
     carrito: function(req,res, next){ 
-        res.render('carrito.ejs')
+        res.render('carritoDeCompras')
     }
 }
 

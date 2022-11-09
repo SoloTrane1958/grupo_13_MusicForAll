@@ -1,16 +1,16 @@
 const express = require('express');
 const router = express.Router();
 
-const userControllers = require('../controllers/userControllers.js');
-router.get('/', userControllers.register); 
+const userControllers = require('../controllers/userControllers');
+router.get('/register', userControllers.register); 
 
 router.get('/', userControllers.index);
 
-router.get("/", userControllers.detallesProductos)
+router.get("/detallesProducto", userControllers.detallesProductos)
 
-router.get("/",userControllers.login); 
+router.get("/login",userControllers.login); 
 
-router.get("/", userControllers.carrito);
+router.get("/carritoDeCompras", userControllers.carrito);
 
 
 
