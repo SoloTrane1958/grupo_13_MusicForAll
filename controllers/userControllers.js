@@ -1,17 +1,17 @@
 let userControllers= {
-    index: function(req,res){
+    index: function(req,res, next){
         res.render('index');
     },
-    detallesProductos: function(req,res){
+    detallesProductos: function(req,res, next){
         res.render('detallesProductos');
     },
     login: function (req,res){
         res.render('login');
     },
-    register: function(req, res) {
+    register: function(req, res, next) {
         res.render('register.ejs')
     },
-    carrito: function(req,res){ 
+    carrito: function(req,res, next){ 
         res.render('carrito.ejs')
     }
 }
