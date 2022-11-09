@@ -1,19 +1,20 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const userRoutes = require('./routes/user');
 
 app.listen(3000, ()=>{
     console.log("El servidor esta funcionando");
 });
+const userRoutes = require('./routes/user');
 
-app.use(express.static('public'));
+
+app.use('/', userRoutes);
+app.use(express.static('public'))
+app.use('views', path.join(__dirname, '/views'));
 
 app.set('view engine', 'ejs');
 
-app.set('views', path.join(__dirname, '/views'));
 
-app.use('/user', userRoutes);
 
 
 module.exports = app;
