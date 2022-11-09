@@ -4,7 +4,8 @@
   "description": "Nuestro sitio web va a estar orientado a la compra de instrumentos musicales con garantia y servicios de envio a todo gran Buenos Aires. Nuestra audiencia objetivo va a cubrir todo el rango etario, indistintamente del genero de personas que tengan un interes en comenzar el estudio formal de un instrumento musical. Facilitando la busqueda, ofreciendo las mejores comparaciones calidad/precio, y un informe detallado de las cualidades de cada producto.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./src/bin/www"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,8 @@
   },
   "homepage": "https://github.com/SoloTrane1958/grupo_13_MusicForAll#readme",
   "dependencies": {
-    "express": "^4.18.1"
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.20"
   }
 }
