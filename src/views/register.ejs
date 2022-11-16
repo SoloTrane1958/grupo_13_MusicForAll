@@ -46,56 +46,41 @@
     <main>
     
         <div class="register_container">
-            <div class="logo_contenedor">
-                <img src="Imagenes/Logo_PC.png" alt="logo">
-            </div>
-            <div class="registro">
-                <h1>Registrate</h1>
-                
-                <form action = "/" method="GET" >
-                    <div>                      
-                        <label for="Nombre">
-                            Nombre
-                            <input type="text" placeholder= "Nombre" size="15" name="nombre" id="nombre">
-                        </label>
-                    </div>
-                    <div>                      
-                        <label for="Apellido">
-                            Apellido
-                            <input type="text" placeholder= "Apellido size="15" name="apellido" id="apellido    ">
-                        </label>
-                    </div>
-
-                    <div>                    
-                        <label for = "usuario">
-                            Usuario
-                            <input type="text" name="username" id="username" placeholder= "Nombre de usuario" size="15" > 
-                        </label>                        
-                    </div>    
-                    <div>                            
-                        <label for = "password">
-                            Contraseña
-                            <input type="text" name="password" id="password" placeholder= "Contraseña" size="15" > 
-                        </label>                        
-                    </div>
-                    <div>                            
-                        <label for = "password">
-                            Repite la contraseña
-                            <input type="text" name="password" id="password" placeholder= "Repite la contraseña" size="15" > 
-                        </label>
-                    </div>         
-                    <div>                          
-                        <label for = "email">
-                            E-mail
-                            <input type="email" name="E-mail" id="email" placeholder= "E-mail" size="15" > 
-                        </label>                       
-                    </div>                    
-                    
-                        <input type="submit" value="Continuar"></input   > 
-                        <div>
-                            <a href="#">Iniciar Sesion</a>
+            <div class="register_card">                
+                <div class="logo_form">
+                    <img src="Imagenes/Logo_Oficial.png" alt="logo">
+                </div>
+                <div class=" header_form">
+                    <h1>Registrate</h1>
+                </div>
+                <div class="registro_form">               
+                    <form action = "/" method="GET" >
+                        <div class="form-item">                      
+                                <input type="text" placeholder= "Nombre" size="15" name="nombre" id="nombre">
                         </div>
-                </form>
+                        <div class="form-item">                      
+                           <input type="text" placeholder= "Apellido "size="15" name="apellido" id="apellido">
+                        </div>
+
+                        <div class="form-item">                   
+                                <input type="text" name="username" id="username" placeholder= "Nombre de usuario" size="15" > 
+                        </div>    
+                        <div class="form-item">                             
+                            <input type="text" name="password" id="password" placeholder= "Contraseña" size="15" >                         
+                        </div>
+                        <div class="form-item">                           
+                            <input type="text" name="password" id="password" placeholder= "Repite la contraseña" size="15" > 
+                        </div>         
+                        <div class="form-item">                          
+                            <input type="email" name="E-mail" id="email" placeholder= "E-mail" size="15" >                        
+                        </div>                    
+                            
+                            <div class="form-item"><input type="submit" value="Continuar"></input> </div>
+                            <div>
+                                <a href="#">Iniciar Sesion</a>
+                            </div>
+                    </form>
+                </div>
             </div>
         </div>
     </main>
