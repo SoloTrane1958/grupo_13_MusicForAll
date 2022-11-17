@@ -2,8 +2,8 @@ const userControllers= {
     index: function(req,res, next){
         res.render('index');
     },
-    detallesProductos: function(req,res, next){
-        res.render('detallesProductos');
+    detallesProducto: function(req,res, next){
+        res.render('detallesProducto');
     },
     login: function (req,res){
         res.render('login');

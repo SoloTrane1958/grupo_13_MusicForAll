@@ -7,7 +7,7 @@ router.get('/', userControllers.index);
 router.get('/register', userControllers.register); 
 
 
-router.get("/detallesProducto", userControllers.detallesProductos)
+router.get("/detallesProducto", userControllers.detallesProducto)
 
 router.get("/login",userControllers.login); 
 
