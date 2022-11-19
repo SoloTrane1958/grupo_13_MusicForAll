@@ -1,8 +1,4 @@
-body
-{
-    background-color: #37a11c;
 
-}
 .logo_contenedor{
     display: flex;
     box-sizing: border-box;
@@ -41,3 +37,24 @@ body
 .search_logo{
     align-self: center;
  }
+ .logo_form{
+    margin-bottom: 2rem;
+  
+  }
+  .logo_form img{
+    width: 8vh;
+  }
+  .logo_form,
+.header_form{
+  text-align: center;
+}
+.header_form h1{
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: .5rem;
+}
+.header_form h1 + div{
+  font-size: calc(1rem * .8);
+  opacity: .8;
+
+}

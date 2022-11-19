@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/headerFooter.css" rel ="stylesheet">
+    <link href="css/header-footer.css" rel ="stylesheet">
     <link href="css/login.css" rel ="stylesheet">
      <link href="css/estilos.css" rel ="stylesheet">
     <!--<link href="css/estilos.css" rel ="stylesheet">-->
@@ -14,88 +14,46 @@
     <title>Iniciar sesión </title>
 </head>
 <body>
-    <header>
-        <div class="top-header">
-        <div class="logo-busqueda">
-            <div class="logo"> 
-                <a href="/"><img src=""></a>
-            </div>
-            <div class="form" action="#" method="GET">
-                <div class="input">Buscar productos, marcas y más</div>
-                <div class="submit"><i class="fa fa-search"></i></div>
-            </div>
-        </div>
-        <p class="copy-header">
-            Hasta 12 cuotas sin interes <br> con o sin tarjeta de crédito
-        </p>
-        </div>
-        <nav class="main-navbar">
-            <ul class="left-navbar">
-                <li><a href="#">Ofertas</a></li>
-                <li><a href="#">Todos los productos</a></li>
-                <li><a href="#">Ayuda</a></li>
-            </ul>
-            <ul class="rigth-navbar">
-                <li><a href="/register">Creá tu cuenta <i class="far fa-id-card"></i></a></li>
-                <li><a href="/login">Ingresá <i class="fas fa-sign-in-alt"></i></a></li>
-                <li><a href="#">Carrito <i class="fas fa-shopping-basket"></i></a></li>
-            </ul>
-        </nav>
-        <div class="burger-menu">
-            <i class="fa fa-bars burger"></i>
-        </div>
-    </header>
+
+    <%- include('./partials/header') %>
+    
     <main>
-        <div class="login_box">
-            <div class="logo_contenedor">
-                <img src="Imagenes/Logo_PC.png" rel ="icon">
-            </div>
+        <div class="login_container">
             
-          <div class="iniciar_sesión">
-        
-             <h1>iniciar sesión</h1>
-             <form action="/" method="POST">
-                 <!--igresa mail de usuario-->
-                 <p><label for="Email">
-                    Email
-                     <input id="Email" type="text" placeholder="Ingrese Email">
-                 </label></p>
-               
-                 <div>
-                     <!-- Ingresa contraseña -->
-                      <p><label for="contraseña">
-                              contraseña
-                              <input id="contraseña" type="password" placeholder="ingrese contraseña">
-                      </label></p>
-                   </div>
-                  <p><input type="submit" value="Continuar"></p>
-                 <div>
-                      <a href="#">Crear cuenta</a>
-                 </div>
-                  <p><div>
-                       <a href="#">Perdi mi contraseña</a>
-                  </div></p>
-            </form>
-         </div>
+          <div class="login_card">
+                <div class="logo_form">
+                    <img src="Imagenes/Logo_Oficial.png" rel ="icon">
+                </div>
+                <div class=" header_form">
+                    <h1>Iniciar sesión</h1>
+                </div>
+                <div class="login_form">
+                    <form action="/" method="POST">
+                        <!--igresa mail de usuario-->
+                        <div class="form-item">
+                            <input id="Email" type="email" placeholder="Ingrese Email">
+                        </div>
+                    
+                        <div>
+                            <!-- Ingresa contraseña -->
+                            <div class="form-item">
+                                    <input id="contraseña" type="password" placeholder="Ingrese contraseña">
+                            </div>
+                        </div>
+                        <div class="form-item"><input type="submit" value="Continuar"></div>
+                        <div class="form-item-other">
+                            <a href="#">Crear cuenta</a>
+                        </div>
+                        <div class="form-item-other">
+                            <a href="#">Perdi mi contraseña</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </main>
-    <footer>
-        <div class="divfg">
-            <article class="def">
-                <h4>Defensa al consumidor</h4>
-            </article>
-            <article class="us">
-                <h4>Sobre nosotros</h4>
-            </article>
-            <article class="redes">
-                <h4>Nuestras redes</h4>
-                <div class="div-redes">
-                <p class="pRedes"><a href="#"><i class="fa-brands fa-instagram"></i>Instagram</a></p>
-                <p class="pRedes"><a href="#"><i class="fa-brands fa-facebook"></i>Facebook</a></p>
-                <p class="pRedes"><a href="#"><i class="fa-brands fa-twitter"></i>Twitter</a></p>
-                </div>
-            </article>
-        </div>
-    </footer>
+    
+    <%- include('./partials/footer') %>
+
 </body>
 </html>
