@@ -1,0 +1,46 @@
+<%- include('./partials/head') %>
+<link rel="stylesheet" href="/css/products.css">
+</head>
+<body>
+
+<%- include('./partials/header') %>
+
+<main>
+    <div class="container products-wrapper">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="products-title">Todos los productos</h2>
+            </div>
+            <% for (const product of products) {%>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <section class="product-box">
+                        <a href="/products/detail/<%= product.id %>">
+                            <figure class="product-box_image">
+                                <img src="/Imagenes/<%= product.image %>" alt="imagen de producto">
+                            </figure>
+                            <article class="product-box_data">
+                                <h2 class="name">
+                                    <%= product.name %>
+                                </h2>
+                                <p class="color">
+                                    <%= product.color %>
+                                </p>
+                                <p class="price">$<%= product.price %>
+                                </p>
+                                <span class="discount">
+                                    <%= product.discount %>%
+                                </span>
+                                <i class="fas fa-truck"></i>
+                            </article>
+                        </a>
+                    </section>
+                </div>
+                <% } %>
+        </div>
+    </div>
+</main>
+
+<%- include('./partials/footer') %> 
+
+</body>
+</html>

@@ -10,34 +10,29 @@ const {
 //Obtenemos la ruta del archivo JSON
 const productsFilePath = path.join(__dirname, '../data/products.json');
 
+let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 //Creamos un objeto literal que contendrá los métodos del controlador
 const productsController = {
     //Método index que se encarga de obtener todos los productos y mostrarlos en la vista
     index: (req, res) => {
-        //Leemos el archivo JSON
-        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         //Renderizamos la vista products y le pasamos la información de los productos
         res.render('products', { products });
     },
     //Método detail que se encarga de obtener el detalle de un producto y mostrarlo en la vista
     detail: (req, res) => {
-        //Leemos el archivo JSON
-        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         //Obtenemos el id del producto que queremos mostrar
         const id = req.params.id;
         //Buscamos el producto que coincida con el id
         const product = products.find(product => product.id == id);
         //Renderizamos la vista productDetail y le pasamos la información del producto
-        res.render('productDetail', { product });
+        res.render('detallesProducto', { product });
     },
-    create: (req, res) => {
+    formCreate: (req, res) => {
         //Renderizamos la vista productCreate
-        res.render('productCreate');
+        res.render('crearProducto');
     },
     //Método store que se encarga de recibir los datos del formulario y crear un nuevo producto
-    store: (req, res) => {
-        //Leemos el archivo JSON
-        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    create: (req, res) => {
         //Obtenemos los datos del formulario
         const data = req.body;
         //Creamos un nuevo producto
@@ -50,7 +45,7 @@ const productsController = {
         const errors = validationResult(req);
         //Si hay errores, redirigimos al usuario al formulario de creación de productos con los errores
         if (!errors.isEmpty()) {
-            return res.render('productCreate', {
+            return res.render('crearProducto', {
                 errors: errors.mapped(),
                 oldData: req.body
             });
@@ -63,18 +58,14 @@ const productsController = {
         res.redirect('/products');
     },
     edit: (req, res) => {
-        //Leemos el archivo JSON
-        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         //Obtenemos el id del producto que queremos editar
         const id = req.params.id;
         //Buscamos el producto que queremos editar
         const product = products.find(product => product.id == id);
         //Renderizamos la vista productEdit
-        res.render('productEdit', { product });
+        res.render('editarProducto', { product });
     },
     update: (req, res) => {
-        //Leemos el archivo JSON
-        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         //Obtenemos el id del producto que queremos editar
         const id = req.params.id;
         //Buscamos el producto que queremos editar
@@ -89,8 +80,6 @@ const productsController = {
         res.redirect('/products');
     },
     delete: (req, res) => {
-        //Leemos el archivo JSON
-        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         //Obtenemos el id del producto que queremos eliminar
         const id = req.params.id;
         //Buscamos el producto que queremos eliminar
@@ -99,8 +88,6 @@ const productsController = {
         res.render('productDelete', { product });
     },
     destroy: (req, res) => {
-        //Leemos el archivo JSON
-        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         //Obtenemos el id del producto que queremos eliminar
         const id = req.params.id;
         //Buscamos el producto que queremos eliminar
