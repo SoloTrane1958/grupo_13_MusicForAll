@@ -10,7 +10,7 @@ const {
 //Obtenemos la ruta del archivo JSON
 const productsFilePath = path.join(__dirname, '../data/products.json');
 
-let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 //Creamos un objeto literal que contendrá los métodos del controlador
 const productsController = {
     //Método index que se encarga de obtener todos los productos y mostrarlos en la vista
@@ -34,13 +34,17 @@ const productsController = {
     //Método store que se encarga de recibir los datos del formulario y crear un nuevo producto
     create: (req, res) => {
         //Obtenemos los datos del formulario
-        const data = req.body;
-        //Creamos un nuevo producto
-        const newProduct = {
-            id: products.length > 0 ? products[products.length - 1].id + 1 : 1,
-            ...data,
-            image: req.file ? req.file.filename : 'default-image.png'
-        };
+        //Creamos un nuevo producto 
+        const product = req.body;
+        product.id =  Number(Math.random()*100000).toFixed(0);
+        product.name = req.body.name;
+        product.descripcion = req.body.descripcion;
+        product.categoria = req.body.categoria;
+        product.price = Number(req.body.price);
+        product.color = req.body.color;
+        product.image = req.body.image;
+       
+
         //Validamos los datos del formulario
         const errors = validationResult(req);
         //Si hay errores, redirigimos al usuario al formulario de creación de productos con los errores
@@ -51,7 +55,7 @@ const productsController = {
             });
         }
         //Agregamos el nuevo producto al array de productos
-        products.push(newProduct);
+        products.push(product);
         //Escribimos el nuevo array de productos en el archivo JSON
         fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
         //Redirigimos al usuario a la lista de productos

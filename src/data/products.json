@@ -1,42 +1,56 @@
 [
-    {
-        "id": 1,
-        "name": "Piano SteinWayn and sons",
-        "price": 50000,
-        "discount": 5,
-        "color": "black",
-        "image": "piano.jpg"
-    },
-    {
-        "id": 2,
-        "name": "Guitarra acustica",
-        "price": 25000,
-        "discount": 15,
-        "color": "clasico",
-        "image": "guitarra2.jpg"
-    },
-    {
-        "id": 3,
-        "name": "guitarra electrica",
-        "price": 30000,
-        "discount": 6,
-        "color": "Red",
-        "image": "guitarra.jpg"
-    },
-    {
-        "id": 4,
-        "name": "kit Rock",
-        "price": 45000,
-        "discount": 20,
-        "color": null,
-        "image": "kit musica.jpg"
-    },
-    {
-        "id": 5,
-        "name": "Violin",
-        "price": 22000,
-        "discount": 3,
-        "color": "Clasico",
-        "image": "violin.jpg"
-    }
+ {
+  "id": 1,
+  "name": "Piano SteinWayn and sons",
+  "price": 50000,
+  "discount": 5,
+  "color": "black",
+  "image": "piano.jpg"
+ },
+ {
+  "id": 2,
+  "name": "Guitarra acustica",
+  "price": 25000,
+  "discount": 15,
+  "color": "clasico",
+  "image": "guitarra2.jpg"
+ },
+ {
+  "id": 3,
+  "name": "guitarra electrica",
+  "price": 30000,
+  "discount": 6,
+  "color": "Red",
+  "image": "guitarra.jpg"
+ },
+ {
+  "id": 4,
+  "name": "kit Rock",
+  "price": 45000,
+  "discount": 20,
+  "color": null,
+  "image": "kit musica.jpg"
+ },
+ {
+  "id": 5,
+  "name": "Violin",
+  "price": 22000,
+  "discount": 3,
+  "color": "Clasico",
+  "image": "violin.jpg"
+ },
+ {
+  "name": "Flauta",
+  "price": 2000,
+  "color": "blanca",
+  "image": "flauta.jpg",
+  "id": "83945"
+ },
+ {
+  "name": "Bajo",
+  "price": 30000,
+  "color": "Negra",
+  "image": "bajo.jpg",
+  "id": "94140"
+ }
 ]
