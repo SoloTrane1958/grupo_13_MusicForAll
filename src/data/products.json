@@ -16,7 +16,6 @@
   "color": "clasico",
   "image": "guitarra2.jpg",
   "category": "new"
-  
  },
  {
   "id": 3,
@@ -26,7 +25,6 @@
   "color": "Red",
   "image": "guitarra.jpg",
   "category": "in-sale"
-
  },
  {
   "id": 4,
@@ -36,7 +34,6 @@
   "color": null,
   "image": "kit musica.jpg",
   "category": "in-sale"
-
  },
  {
   "id": 5,
@@ -103,5 +100,15 @@
   "color": "Black",
   "image": "pianoelectrico.jpg",
   "id": "29367"
+ },
+ {
+  "name": "triangulo",
+  "discount": 29,
+  "categoria": "1",
+  "price": 234,
+  "descripcion": "2eefr",
+  "color": "fdsfdfd",
+  "id": "75639",
+  "image": "triangulo-1669342648838.jpg"
  }
 ]

@@ -43,9 +43,7 @@ const productsController = {
         product.discount = Number(req.body.discount);
         product.price = Number(req.body.price);
         product.color = req.body.color;
-        product.image = req.body.image;
-        
-       
+        product.image = req.file.filename;        
 
         //Validamos los datos del formulario
         const errors = validationResult(req);
