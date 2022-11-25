@@ -17,17 +17,25 @@
                 <div class=" header_form">
                     <h1>Registrate</h1>
                 </div>
-                <div class="registro_form">               
-                    <form action = "/" method="GET" >
-                        <div class="form-item">                      
-                                <input type="text" placeholder= "Nombre" size="15" name="nombre" id="nombre">
-                        </div>
-                        <div class="form-item">                      
-                           <input type="text" placeholder= "Apellido "size="15" name="apellido" id="apellido">
+                <div class="registro_form"> 
+                    <!--Agrego el enctype -->              
+                    <form action = "/" method="POST" enctype="multipart/form-data">
+                        <!--Agrego el input type: file para poder subir el archivo-->
+
+                        <div class="form-item">
+                            <input type="file" name="imagen" id="imagen">
+					        <label for="imagen"> Adjunte una imagen </label>
                         </div>
 
                         <div class="form-item">                   
-                                <input type="text" name="username" id="username" placeholder= "Nombre de usuario" size="15" > 
+                            <input type="text" name="firstname" id="firstname" placeholder= "Nombre" size="15" > 
+                        </div>  
+                        <div class="form-item">                      
+                           <input type="text" name="lastname" id="lastname" placeholder= "Apellido" size="15" >
+                        </div>
+
+                        <div class="form-item">                   
+                            <input type="text" name="username" id="username" placeholder= "Nombre de usuario" size="15" > 
                         </div>    
                         <div class="form-item">                             
                             <input type="text" name="password" id="password" placeholder= "Contraseña" size="15" >                         
@@ -36,7 +44,7 @@
                             <input type="text" name="password" id="password" placeholder= "Repite la contraseña" size="15" > 
                         </div>         
                         <div class="form-item">                          
-                            <input type="email" name="E-mail" id="email" placeholder= "E-mail" size="15" >                        
+                            <input type="email" name="email" id="email" placeholder= "E-mail" size="15" >                        
                         </div>                    
                             
                             <div class="form-item"><input type="submit" value="Continuar"></input> </div>
