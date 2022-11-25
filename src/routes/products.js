@@ -1,14 +1,15 @@
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
+const path = require('path');
 //Requerimos el controlador
 const productsController = require('../controllers/productsControllers');
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null,path.join(__dirname,'/public/Imagenes'));
+      cb(null,path.join(__dirname,'../../public/Imagenes'));
     },
     filename: function(req,file, cb){
-        cb(null,file.filename + '-' + Date.now() + path.extreme(file.originalname));
+        cb(null,file.originalname.replace(`${path.extname(file.originalname)}`, '') + '-' + Date.now() + path.extname(file.originalname));
     }
   });
   const upload = multer({storage});
