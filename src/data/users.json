@@ -120,5 +120,41 @@
    "aergergaergar"
   ],
   "email": "mateospinelli@hotmail.com"
+ },
+ {
+  "firstname": "mateo",
+  "lastname": "spinelli",
+  "username": "Admin",
+  "password": [
+   "klasndaskjo",
+   "fsahfaoishofa"
+  ],
+  "email": "msaoidmas@gmail.com",
+  "id": "90642",
+  "imagen": "undefined-1669419798465.jpg"
+ },
+ {
+  "firstname": "dasdas",
+  "lastname": "dasdas",
+  "username": "asdasdas",
+  "password": [
+   "dasdas",
+   "dasdas"
+  ],
+  "email": "dsadas@gmail.com",
+  "id": "5693",
+  "imagen": "undefined-1669420138379.jpg"
+ },
+ {
+  "firstname": "dasdas",
+  "lastname": "dasdasdas",
+  "username": "dasdsadsd",
+  "password": [
+   "asdasdasd",
+   "asdasdas"
+  ],
+  "email": "dasdas@gmail.com",
+  "id": "80095",
+  "imagen": "undefined-1669420354270.jpg"
  }
 ]

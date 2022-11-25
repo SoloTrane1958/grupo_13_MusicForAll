@@ -12,9 +12,9 @@ const multer= require('multer');
 //tengo que crear dos variables que invocan diferentes metodos que ofrece multer. 
 const storage= multer.diskStorage({
     destination: function(req, file, cb){
-        cb(null, path.join(__dirname, '../../public/Imagenes/users'))
+        cb(null, path.join(__dirname, '../../public/Imagenes'))
     },
-    filename: function(req,res, callback){
+    filename: function(req,file, cb){
         cb(null, file.filename + '-' + Date.now() + path.extname(file.originalname))
     }
 })
@@ -25,14 +25,15 @@ const upload= multer({
 
 router.get('/', userControllers.index);
 
-router.get('/users', userControllers.users); 
+
 
 // 3- necesito de rutas, una ruta que me resuelva el formulario (get).
 router.get('/register', userControllers.create)
 // 4- y otra ruta que me resuelva la insercion de ese usuario (post). 
 
+router.get('/users', userControllers.users); 
 //paso el nombre del input por el middleware
-router.post('/', upload.single('imagen'), userControllers.store); 
+router.post('/users', upload.single('imagen'), userControllers.store); 
 
 
 

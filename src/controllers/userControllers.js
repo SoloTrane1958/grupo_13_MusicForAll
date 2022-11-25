@@ -1,9 +1,11 @@
 const fs = require ('fs');
 const path = require ('path');
 
-const usersFilePath = path.join(__dirname, '../data/users.json')
 
+const usersFilePath = path.join(__dirname, '../data/users.json')
+const productsFilePath = path.join(__dirname, '../data/products.json');
 const usersDB = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8')); 
+const productsDB = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const userControllers= {
     index: function(req,res, next){
@@ -21,21 +23,28 @@ const userControllers= {
     }, 
 
     store: function (req, res) {
-        let newUser = {
-            id: Date.now(), 
-            firstname : req.body.firstname,
-            lastname : req.body.lastname,
-            username : req.body.username,
-            password : req.body.password,
-            email: req.body.email,
-            avatar: req.file.filename, 
-        }
+        const newusers = req.body
+        newusers.id =  Number(Math.random()*100000).toFixed(0);
+        newusers.firstname = req.body.firstname;
+        newusers.lastname = req.body.lastname;
+        newusers.username = req.body.username;
+        newusers.email = req.body.email;;
+        newusers.imagen = req.file.filename;
+        // let newUser = {
+        //     id: Date.now(), 
+        //     firstname : req.body.firstname,
+        //     lastname : req.body.lastname,
+        //     username : req.body.username,
+        //     password : req.body.password,
+        //     email: req.body.email,
+        //     avatar: req.file.filename, 
+        // }
 
-        usersDB.push(newUser); 
+        usersDB.push(newusers); 
 
         fs.writeFileSync(usersFilePath, JSON.stringify(usersDB, null, ' ')); 
 
-        res.redirect('/index');
+        res.redirect('/users');
          
     }
 
