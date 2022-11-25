@@ -40,9 +40,11 @@ const productsController = {
         product.name = req.body.name;
         product.descripcion = req.body.descripcion;
         product.categoria = req.body.categoria;
+        product.discount = Number(req.body.discount);
         product.price = Number(req.body.price);
         product.color = req.body.color;
         product.image = req.body.image;
+        
        
 
         //Validamos los datos del formulario

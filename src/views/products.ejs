@@ -25,12 +25,17 @@
                                 <p class="color">
                                     <%= product.color %>
                                 </p>
-                                <p class="price">$<%= product.price %>
+                                <% if(product.discount > 0) {%>
+                                <p class="price">$ <%= product.price %>
                                 </p>
-                                <span class="discount">
-                                    <%= product.discount %>%
-                                </span>
-                                <i class="fas fa-truck"></i>
+                                <% } %>
+                                    <% if(product.discount > 0) {%>
+                                        <span class="discount">
+                                            <%= product.discount %> 
+                                            % Off
+                                        </span>
+                                    <% } %>
+                                <i class="fas fa-guitar"></i>
                             </article>
                         </a>
                     </section>

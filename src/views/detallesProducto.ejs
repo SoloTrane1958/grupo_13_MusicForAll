@@ -7,11 +7,11 @@
 
     <main>
         <section class="producto">
-            <img src="https://http2.mlstatic.com/D_NQ_NP_704227-MLA44115124280_112020-W.jpg" alt="Img-Producto" width="180px">
+            <a href="/detail/<%= product.id %>"><img src="/Imagenes/<%= product.image %>" alt="Img-Producto"></a>
             <div class="cuadro-detalle">
-                <p class="nombre">Guitarra de Abedul</p>
-                <p class="precio">$4800</p>
-                <p class="descuento">15% Off</p>
+                <h2 class="nombre"><%= product.name %></h2>
+                <p class="precio">$<%= product.price %></p>
+                <p class="descuento"><%= product.discount %></p>
                 <div class="agregar-extra">
                     <button>Agregar al carrito</button>
                     <button>-</button>
@@ -32,9 +32,7 @@
         </section>
         <section>
             <h3>Descripción</h3>
-            <p class="descripcion">Con un toque artesanal único plasmado en sus materiales, Gracia acompaña a la 
-               historia musical desde el año 1870. Sus guitarras poseen alcance internacional y son 
-               utilizadas tantos por principiantes como por grandes referentes de la música.</p>
+            <p class="descripcion"><%= product.descripcion %></p>
         </section>
         <section>
             <h3>Productos Relacionados</h3>

@@ -42,6 +42,7 @@
  {
   "name": "Flauta",
   "price": 2000,
+  "discount": null,
   "color": "blanca",
   "image": "flauta.jpg",
   "id": "83945"
@@ -49,8 +50,49 @@
  {
   "name": "Bajo",
   "price": 30000,
+  "discount": null,
   "color": "Negra",
   "image": "bajo.jpg",
   "id": "94140"
+ },
+ {
+  "name": "Ukelele",
+  "discount": "16",
+  "categoria": "2",
+  "price": 15000,
+  "descripcion": "bueno bonito barato",
+  "color": "Clasico",
+  "image": "ukelele.jpg",
+  "id": "69712"
+ },
+ {
+  "name": "Microfono",
+  "discount": 5,
+  "categoria": "2",
+  "price": 25000,
+  "descripcion": "microfono de alta calidad con supresor de viento",
+  "color": "Black",
+  "image": "microfono.jpg",
+  "id": "90996"
+ },
+ {
+  "name": "Tambor",
+  "discount": 0,
+  "categoria": "1",
+  "price": 8000,
+  "descripcion": "Tambor antiguo reestaurado",
+  "color": "Black",
+  "image": "tambor.jpg",
+  "id": "90269"
+ },
+ {
+  "name": "Piano electrico",
+  "discount": 10,
+  "categoria": "2",
+  "price": 45000,
+  "descripcion": "Piano electrico de alta calidad, extrema suavidad",
+  "color": "Black",
+  "image": "pianoelectrico.jpg",
+  "id": "29367"
  }
 ]
