@@ -11,18 +11,30 @@
             </div>
           <div>
              <h1>Vender Producto</h1>
-             <form action="/products" method="POST">
+             <form action="/products" method="POST" enctype="multipart/form-data">
                 <p><label for="name">
                     <input id="name" type="text" placeholder="Nombre del producto" name ="name">
                 </label></p>
                 <div>
                     <p><label for="discount">
-                        <input id="discount" type="text" placeholder="discount">
+                        <input id="discount" type="text" placeholder="discount" name="discount">
                     </label></p>
                 </div>
+                <p><label for="categoria">
+                    <select id="categoria" type="text" placeholder="categoria" name="categoria">
+                        <option value="1">Nuevo</option>
+                        <option value="2">En descuento</option>
+                        <option value="3">Restock</option>
+                    </select>
+                </label></p>
                 <div>
                     <p><label for="price">
                         <input id="price" type="text" placeholder="Precio" name = 'price'>
+                    </label></p>
+                </div>
+                <div>
+                    <p><label for="descripcion">
+                        <input id="descripcion" type="text" placeholder="descripcion" name="descripcion">
                     </label></p>
                 </div>
                 <div>

@@ -12,34 +12,38 @@
             </div>
           <div>
              <h1>Modificar Producto</h1>
-             <form action="/" method="POST">
+             <form action="/products" method="POST">
                 <p><label for="Nombre del producto">
                     <input id="Nombre del producto" type="text" placeholder="Nombre del producto">
                 </label></p>
                 <div>
-                    <p><label for="Descripción">
-                        <input id="Descripción" type="text" placeholder="Descripción">
+                    <p><label for="descripcion">
+                        <input id="descripcion" type="text" placeholder="descripcion" name="descripcion">
                     </label></p>
                 </div>
                 <div>
-                    <p><label for="Categoría">
-                        <input id="Categoría" type="text" placeholder="Categoría">
+                    <p><label for="categoria">
+                        <select id="categoria" type="text" placeholder="categoria" name="categoria">
+                            <option value="1">Nuevo</option>
+                            <option value="2">En descuento</option>
+                            <option value="3">Restock</option>
+                        </select>
                     </label></p>
                 </div>
                 <div>
                     <p><label for="Precio">
-                        <input id="Precio" type="text" placeholder="Precio">
+                        <input id="Precio" type="text" placeholder="Precio" name="price">
                     </label></p>
                 </div>
                 <div>
                     <p><label for="Color">
-                        <input id="Color" type="text" placeholder="Color">
+                        <input id="Color" type="text" placeholder="Color" name="color">
                     </label></p>
                 </div>
                 <div>
                     <p><label>
                         Imagenes del Producto
-                        <input type="file" name="avatar" accept=".jpg">
+                        <input type="file" name="image" accept=".jpg">
                     </label></p>
                 </div>
                   <p><input type="submit" value="Continuar"></p>
