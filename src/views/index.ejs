@@ -2,31 +2,105 @@
 <%- include('./partials/head') %>
 </head>
 <body>
+	<!-- Header -->
+	<%- include('partials/header') %>
+	<!-- /Header -->
+	
+	<!-- Banner -->
+	<div class="banner"></div>
+	<!-- /Banner -->
 
-    <%- include('./partials/header') %>
+	<!-- recomendados -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Nuestros Destacados</h2>
+			</div>
+			<!-- Show the "recomendados" products -->
 
-    <main>
-    <section>
-        <h3>Productos destacados</h3>
-        <img src="https://static.kemikcdn.com/2017/04/gv-ac851cbs_1.jpg" alt="" width="120px">
-        <img src="https://http2.mlstatic.com/D_NQ_NP_745491-MLA50152025869_052022-W.jpg" alt="" width="120px">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Violin_VL100.png" alt="" width="120px">
-        <img src="http://d2r9epyceweg5n.cloudfront.net/stores/001/784/472/products/squier-stratocaster1-6eaad5d24e056aa4cb16287218558147-640-0.jpg"
-            alt="" width="120px">
-    </section>
+			<% products.filter(product => product.category === 'recomended'). forEach (product => { %> 
+			    <div class="col-12 col-sm-6 col-lg-3">
+					<section class="product-box">
+						<!-- aca tengo que poner el id entonces uso js con el operador igual para imprimir el atributo id de product-->
+						<a href="/products/detail/<%=product.id %>">
+							<figure class="product-box_image">
+								<img src="/imagenes/<%=product.image %>" alt="imagen de producto">
+							</figure>
+							<article class="product-box_data">
+								<h2><%=product.price %></h2>
+								<span><%=product.discount %></span>
+								<p><%=product.name %></p>
+							</article>
+						</a>
+					</section>
+				</div>
+		    <% }) %> 
 
-    <section>
-        <h3>Productos mas vendidos</h3>
-        <img src="https://static.kemikcdn.com/2017/04/gv-ac851cbs_1.jpg" alt="" width="120px">
-        <img src="https://http2.mlstatic.com/D_NQ_NP_745491-MLA50152025869_052022-W.jpg" alt="" width="120px">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Violin_VL100.png" alt="" width="120px">
-        <img src="http://d2r9epyceweg5n.cloudfront.net/stores/001/784/472/products/squier-stratocaster1-6eaad5d24e056aa4cb16287218558147-640-0.jpg"
-            alt="" width="120px">
-    </section>
-    </main>
 
-    <%- include('./partials/footer') %>
+		</div>
+	</div>
+	<!-- /recomendados -->
 
-</body>
+	<!-- Ofertas -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Los recién llegados</h2>
+			</div>
+			<!-- Show the "Los recién llegados" products -->
+			<% products.filter(product => product.category === 'new'). forEach (product => { %> 
+			    <div class="col-12 col-sm-6 col-lg-3">
+					<section class="product-box">
+						<!-- aca tengo que poner el id entonces uso js con el operador igual para imprimir el atributo id de product-->
+						<a href="/products/detail/<%=product.id %>">
+							<figure class="product-box_image">
+								<img src="/imagenes/<%=product.image %>" alt="imagen de producto">
+							</figure>
+							<article class="product-box_data">
+								<h2><%=product.price %></h2>
+								<span><%=product.discount %></span>
+								<p><%=product.name %></p>
+							</article>
+						</a>
+					</section>
+				</div>
+		    <% }) %> 
+		</div>
+	</div>
+	<!-- /Ofertas -->
+
+    <!-- promociones -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Productos en promoción</h2>
+			</div>
+			<!-- Show the "in-sale" products -->
+
+			<% products.filter(product => product.category === 'in-sale'). forEach (product => { %> 
+			    <div class="col-12 col-sm-6 col-lg-3">
+					<section class="product-box">
+						<!-- aca tengo que poner el id entonces uso js con el operador igual para imprimir el atributo id de product-->
+						<a href="/products/detail/<%=product.id %>">
+							<figure class="product-box_image">
+								<img src="/imagenes/<%=product.image %>" alt="imagen de producto">
+							</figure>
+							<article class="product-box_data">
+								<h2><%=product.price %></h2>
+								<span><%=product.discount %></span>
+								<p><%=product.name %></p>
+							</article>
+						</a>
+					</section>
+				</div>
+		    <% }) %> 
+
+
+		</div>
+	</div>
+
+	<!-- footer -->
+	<%- include('partials/footer') %>
+	<!-- /footer -->
 
 </html>

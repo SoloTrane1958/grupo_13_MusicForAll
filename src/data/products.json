@@ -5,7 +5,8 @@
   "price": 50000,
   "discount": 5,
   "color": "black",
-  "image": "piano.jpg"
+  "image": "piano.jpg",
+  "category": "recomended"
  },
  {
   "id": 2,
@@ -13,7 +14,9 @@
   "price": 25000,
   "discount": 15,
   "color": "clasico",
-  "image": "guitarra2.jpg"
+  "image": "guitarra2.jpg",
+  "category": "new"
+  
  },
  {
   "id": 3,
@@ -21,7 +24,9 @@
   "price": 30000,
   "discount": 6,
   "color": "Red",
-  "image": "guitarra.jpg"
+  "image": "guitarra.jpg",
+  "category": "in-sale"
+
  },
  {
   "id": 4,
@@ -29,7 +34,9 @@
   "price": 45000,
   "discount": 20,
   "color": null,
-  "image": "kit musica.jpg"
+  "image": "kit musica.jpg",
+  "category": "in-sale"
+
  },
  {
   "id": 5,
@@ -37,7 +44,8 @@
   "price": 22000,
   "discount": 3,
   "color": "Clasico",
-  "image": "violin.jpg"
+  "image": "violin.jpg",
+  "category": "recomended"
  },
  {
   "name": "Flauta",
@@ -45,7 +53,8 @@
   "discount": null,
   "color": "blanca",
   "image": "flauta.jpg",
-  "id": "83945"
+  "id": "83945",
+  "category": "new"
  },
  {
   "name": "Bajo",
