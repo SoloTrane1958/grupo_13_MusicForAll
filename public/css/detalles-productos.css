@@ -55,6 +55,14 @@ main{
     /* padding: 5px; */
     margin-left: 40px;
 }
+.secImg{
+    display: flex;
+    max-width: 180px;
+    width: 180px;
+}
+.pproduct-box_image{
+    width: 180px;
+}
 @media (min-width: 768px){
     .producto img{
     border: 1px #b3b3b3 solid;

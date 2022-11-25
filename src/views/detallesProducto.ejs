@@ -1,51 +1,62 @@
-    <%- include('./partials/head') %>
-    <link href="/css/detalles-productos.css" rel ="stylesheet">
-</head>
-<body>
+<%- include('./partials/head') %>
+    <link href="/css/detalles-productos.css" rel="stylesheet">
+    </head>
 
-    <%- include('./partials/header') %>
+    <body>
 
-    <main>
-        <section class="producto">
-            <a href="/detail/<%= product.id %>"><img src="/Imagenes/<%= product.image %>" alt="Img-Producto"></a>
-            <div class="cuadro-detalle">
-                <h2 class="nombre"><%= product.name %></h2>
-                <p class="precio">$<%= product.price %></p>
-                <p class="descuento"><%= product.discount %></p>
-                <div class="agregar-extra">
-                    <button>Agregar al carrito</button>
-                    <button>-</button>
-                    <button>+</button>
-                </div>
-            </div>
-        </section>
-        <section>
-            <h3>Características</h3>
-            <div class="CaracteristicasBox">
-                <p class="pCaracteristicas">Material de la tapa: Abedul</p>
-                <p class="pCaracteristicas">Materiales de las cuerdas: Nailon</p>
-                <p class="pCaracteristicas">Materiales del mástil: Cedro</p>
-                <p class="pCaracteristicas">Marca: Gracia</p>
-                <p class="pCaracteristicas">Modelo: M1</p>
-                <p class="pCaracteristicas">Color: Natural</p>
-            </div>
-        </section>
-        <section>
-            <h3>Descripción</h3>
-            <p class="descripcion"><%= product.descripcion %></p>
-        </section>
-        <section>
-            <h3>Productos Relacionados</h3>
-            <section class="secImg">
-            <img src="https://static.kemikcdn.com/2017/04/gv-ac851cbs_1.jpg" alt="" class="imgRelacionadas">
-            <img src="https://http2.mlstatic.com/D_NQ_NP_745491-MLA50152025869_052022-W.jpg" alt="" class="imgRelacionadas">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Violin_VL100.png" alt="" class="imgRelacionadas">
-            <img src="http://d2r9epyceweg5n.cloudfront.net/stores/001/784/472/products/squier-stratocaster1-6eaad5d24e056aa4cb16287218558147-640-0.jpg" alt="" class="imgRelacionadas">
-            </section>
-        </section>
-    </main>
+        <%- include('./partials/header') %>
 
-    <%- include('./partials/footer') %>
+            <main>
+                <section class="producto">
+                    <a href="/detail/<%= product.id %>"><img src="/Imagenes/<%= product.image %>"
+                            alt="Img-Producto"></a>
+                    <div class="cuadro-detalle">
+                        <h2 class="nombre">
+                            <%= product.name %>
+                        </h2>
+                        <p class="precio">$<%= product.price %>
+                        </p>
+                        <p class="descuento">
+                            <%= product.discount %>
+                        </p>
+                        <div class="agregar-extra">
+                            <button>Agregar al carrito</button>
+                            <button>-</button>
+                            <button>+</button>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Características</h3>
+                    <div class="CaracteristicasBox">
+                        <p class="pCaracteristicas">Material de la tapa: Abedul</p>
+                        <p class="pCaracteristicas">Materiales de las cuerdas: Nailon</p>
+                        <p class="pCaracteristicas">Materiales del mástil: Cedro</p>
+                        <p class="pCaracteristicas">Marca: Gracia</p>
+                        <p class="pCaracteristicas">Modelo: M1</p>
+                        <p class="pCaracteristicas">Color: Natural</p>
+                    </div>
+                </section>
+                <section>
+                    <h3>Descripción</h3>
+                    <p class="descripcion">
+                        <%= product.descripcion %>
+                    </p>
+                </section>
+                <section>
+                    <h3>Productos Relacionados</h3>
+                    <section class="secImg">
+                        <% for(i=0; i <= (product.image).length; i++){ %>
+                            <figure class="product-box_image">
+								<img src="/imagenes/<%=product.image %>" alt="imagen de producto">
+							</figure>
+                            <% } %>
+                    </section>
+                </section>
+            </main>
 
-</body>
-</html>
+            <%- include('./partials/footer') %>
+
+    </body>
+
+    </html>
