@@ -6,6 +6,7 @@ const usersFilePath = path.join(__dirname, '../data/users.json')
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const usersDB = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8')); 
 const productsDB = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const { validationResult } = require ('express-validator'); 
 
 const userControllers= {
     index: function(req,res, next){
@@ -30,15 +31,6 @@ const userControllers= {
         newusers.username = req.body.username;
         newusers.email = req.body.email;;
         newusers.imagen = req.file.filename;
-        // let newUser = {
-        //     id: Date.now(), 
-        //     firstname : req.body.firstname,
-        //     lastname : req.body.lastname,
-        //     username : req.body.username,
-        //     password : req.body.password,
-        //     email: req.body.email,
-        //     avatar: req.file.filename, 
-        // }
 
         usersDB.push(newusers); 
 
@@ -46,13 +38,24 @@ const userControllers= {
 
         res.redirect('/users');
          
-    }
-
-    
-    /* login: function (req,res){
+    },
+  
+    login: function (req,res){
         res.render('login');
     },
-    register: function(req, res, next) {
+
+    processLogIn: function (req,res) {
+        const resultValidation = validationResult(req);
+        
+        if (resultValidation.errors.length > 0){
+            return res.render('login', {
+                errors: resultValidation.mapped()
+            }); 
+        }
+    }
+
+
+    /* register: function(req, res, next) {
         res.render('register')
     },
     carrito: function(req,res, next){ 

@@ -9,6 +9,8 @@ const userControllers = require('../controllers/userControllers');
 //requiero multer en el archivo 
 const multer= require('multer');
 
+const { body } = require('express-validator'); 
+
 //tengo que crear dos variables que invocan diferentes metodos que ofrece multer. 
 const storage= multer.diskStorage({
     destination: function(req, file, cb){
@@ -21,7 +23,12 @@ const storage= multer.diskStorage({
 
 const upload= multer({
     storage
-})
+});
+
+const validations = [
+    body('email').notEmpty().isEmail().withMessage('Tienes que escribir un correo electronico'),
+    body('password').notEmpty().withMessage('Tienes que escribir una contraseña')
+]; 
 
 router.get('/', userControllers.index);
 
@@ -34,6 +41,14 @@ router.get('/register', userControllers.create)
 router.get('/users', userControllers.users); 
 //paso el nombre del input por el middleware
 router.post('/users', upload.single('imagen'), userControllers.store); 
+
+//---------
+
+router.get('/login', userControllers.login),
+
+//procesar el login 
+router.post('/login', validations, userControllers.processLogIn),
+
 
 
 
