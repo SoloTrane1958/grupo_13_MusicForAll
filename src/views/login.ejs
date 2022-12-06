@@ -8,6 +8,7 @@
     
     <main>
         <div class="login_container">
+
             
           <div class="login_card">
                 <div class="logo_form">
@@ -20,13 +21,42 @@
                     <form action="/login" method="POST">
                         <!--igresa mail de usuario-->
                         <div class="form-item">
-                            <input name=email id="Email" type="email" placeholder="Ingrese Email">
+                            <input 
+                            name=email 
+                            id="Email" 
+                            type="email" 
+                            class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                            value="<%= locals.oldData ? oldData.email : null %>"
+                            placeholder="Ingrese Email">
+
+                            <% if (locals.errors && errors.email) { %>
+                                <div class="text-danger">
+                                    <%= errors.email.msg %>
+
+                                </div>
+
+                            <% } %>
+       
                         </div>
                     
                         <div>
                             <!-- Ingresa contraseña -->
                             <div class="form-item">
-                                <input name=password id="contraseña" type="password" placeholder="Ingrese contraseña">
+                                <input 
+                                name=password
+                                id="contraseña"
+                                class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+                                type="password" 
+                                placeholder="Ingrese contraseña">
+
+                                <% if (locals.errors && errors.password) { %>
+                                    <div class="text-danger">
+                                        <%= errors.password.msg %>
+
+                                    </div>
+
+                                <% } %>
+
                             </div>
                         </div>
                         <div class="form-item"><input type="submit" value="Continuar"></div>

@@ -10,6 +10,7 @@ const userControllers = require('../controllers/userControllers');
 const multer= require('multer');
 
 const { body } = require('express-validator'); 
+const { default: isEmail } = require('validator/lib/isEmail');
 
 //tengo que crear dos variables que invocan diferentes metodos que ofrece multer. 
 const storage= multer.diskStorage({
@@ -26,7 +27,11 @@ const upload= multer({
 });
 
 const validations = [
-    body('email').notEmpty().isEmail().withMessage('Tienes que escribir un correo electronico'),
+    //tengo dos validaciones para el mismo campo, si el error salto bail detiene las validaciones, si no deja pasar el resto. 
+    body('email')
+    .notEmpty().withMessage('Tienes que escribir un correo electronico').bail()
+    .isEmail().withMessage('Debes escribir un formato de correo valido')
+    ,
     body('password').notEmpty().withMessage('Tienes que escribir una contraseña')
 ]; 
 
