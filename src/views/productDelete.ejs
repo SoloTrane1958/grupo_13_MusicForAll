@@ -1,0 +1,26 @@
+<%- include('./partials/head') %>
+</head>
+<body>
+
+        <%- include('./partials/header') %>
+
+    <main>
+        <div class="login_box">            
+          <div>
+            <a href="/detail/<%= product.id %>"><img src="/Imagenes/<%= product.image %>"
+                alt="Img-Producto"></a>
+             <h1>Eliminar producto</h1>
+             <form action="/products/<%= product.id %>?_method=DELETE" method="POST">
+
+                <button type="submit">Eliminar</button>
+            
+            </form>
+            
+         </div>
+        </div>
+    </main>
+
+        <%- include('./partials/footer') %> 
+
+</body>
+</html>

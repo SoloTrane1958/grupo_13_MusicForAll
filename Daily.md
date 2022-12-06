@@ -7,4 +7,5 @@
 
 25/11
 - creamos y linkeamos el register a la pagina de users.ejs
-
+5/12
+- Terminamos controlador de editar producto y eliminar.

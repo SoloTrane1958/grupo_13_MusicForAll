@@ -1,5 +1,7 @@
 var createError = require('http-errors');
 var express = require('express');
+const methodOverride = require('method-override');
+
 
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -12,7 +14,7 @@ var usersRouter = require('./src/routes/users');
 var productRouter = require('./src/routes/products');
 
 var app = express();
-
+app.use(methodOverride('_method'));
 // view engine setup
 app.set('views', path.join(__dirname, '/src/views'));
 app.set('view engine', 'ejs');

@@ -78,6 +78,7 @@ const productsController = {
         product.name = req.body.name;
         product.description = req.body.description;
         product.price = req.body.price;
+        product.image = req.file.filename;   
         //Escribimos el nuevo array de productos en el archivo JSON
         fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
         //Redirigimos al usuario a la lista de productos

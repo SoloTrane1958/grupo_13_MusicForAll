@@ -6,17 +6,13 @@
         <%- include('./partials/header') %>
 
     <main>
-        <div class="login_box">
-            <div class="logo_contenedor">
-                <img src="Imagenes/Logo_PC.png" rel ="icon">
-            </div>
+        <div class="login_box">          
           <div>
 
             <a href="/detail/<%= product.id %>"><img src="/Imagenes/<%= product.image %>"
                 alt="Img-Producto"></a>
              <h1>Modificar Producto</h1>
-             <form action="/products" method="POST">
-
+             <form action="/products/<%= product.id %>?_method=PUT" method="POST"  enctype="multipart/form-data">
                 
                 <p><label for="Nombre del producto">
                 

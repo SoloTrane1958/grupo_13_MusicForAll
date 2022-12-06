@@ -1,5 +1,6 @@
 
 <%- include('./partials/head') %>
+
 </head>
 <body>
 	<!-- Header -->
@@ -98,7 +99,36 @@
 
 		</div>
 	</div>
-
+	<div class="carousel">
+		<!-- The items in the carousel -->
+		<% products.filter(product => product.category === 'in-sale'). forEach (product => { %> 
+		<div class="carousel-item active">
+		  <!-- Item 1 -->
+		  <a href="/products/detail/<%=product.id %>">
+			<figure class="product-box_image">
+				<img src="/imagenes/<%=product.image %>" alt="imagen de producto">
+			</figure>
+			<article class="product-box_data">
+				<h2><%=product.price %></h2>
+				<span><%=product.discount %></span>
+				<p><%=product.name %></p>
+			</article>
+			</a>
+		</div>
+		<div class="carousel-item">
+		  <!-- Item 2 -->
+		  <figure class="product-box_image">
+			<img src="/imagenes/<%=product.image %>" alt="imagen de producto">
+		</figure>
+		</div>
+		<div class="carousel-item">
+		  <!-- Item 3 -->
+		  <figure class="product-box_image">
+			<img src="/imagenes/<%=product.image %>" alt="imagen de producto">
+		</figure>
+		</div>
+		<% }) %> 
+	  </div>
 	<!-- footer -->
 	<%- include('partials/footer') %>
 	<!-- /footer -->

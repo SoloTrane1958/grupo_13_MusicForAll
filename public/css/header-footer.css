@@ -356,6 +356,50 @@ h3{
     font-weight: 700!important; 
     display: inline-block;
 }
+ /* The container for the carousel */
+ .carousel {
+    /* Set the height and width of the carousel container */
+    height: 400px;
+    width: 600px;
+    /* Hide any overflowing content */
+    overflow: hidden;
+    /* Add a border around the carousel */
+    border: 1px solid #ccc;
+  }
+  
+  /* The items in the carousel */
+  .carousel-item {
+    /* Position the items absolutely, so they can be stacked and moved */
+    position: absolute;
+    /* Set the height and width of the items */
+    height: 400px;
+    width: 600px;
+    /* Hide any overflowing content */
+    overflow: hidden;
+    /* Style the items with a border and some padding */
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  /* The "active" item in the carousel */
+  .carousel-item.active {
+    /* Set the z-index of the active item to be higher than the other items */
+    z-index: 1;
+    /* Use the "transform" property to slide the active item into view */
+    transform: translateX(0);
+    /* Use the "transition" property to animate the slide */
+    transition: transform 1s ease-in-out;
+  }
+  
+  /* The other items in the carousel */
+  .carousel-item:not(.active) {
+    /* Set the z-index of the other items to be lower than the active item */
+    z-index: 0;
+    /* Use the "transform" property to slide the other items out of view */
+    transform: translateX(-100%);
+    /* Use the "transition" property to animate the slide */
+    transition: transform 1s ease-in-out;
+  }
 
 @media(min-width: 768px){
     .col-md{
