@@ -32,20 +32,49 @@ const validations = [
     .notEmpty().withMessage('Tienes que escribir un correo electronico').bail()
     .isEmail().withMessage('Debes escribir un formato de correo valido')
     ,
-    body('password').notEmpty().withMessage('Tienes que escribir una contraseña')
+    body('password').isLength({min: 8}).withMessage('La contraseña debe tener al menos 8 caracteres').notEmpty().withMessage('Tienes que escribir una contraseña')
 ]; 
+
+const registerValidations = [
+    body('fullname').notEmpty().withMessage('Tienes que escribir un nombre'),
+    body('lastname').notEmpty().withMessage('Tienes que escribir un apellido'),
+    body('username').notEmpty().withMessage('Tienes que escribir un usuario'),
+    body('password').notEmpty().withMessage('Tienes que escribir una contraseña'),
+    body('email')
+     .notEmpty().withMessage('Tienes que escribir un correo electronico').bail()
+     .isEmail().withMessage('Debes escribir un formato de correo valido'), 
+    body('imagen').custom((value, {req}) => {
+        let file = req.file; 
+        let acceptedExtensions = ['.jpg', '.png', '.gif'];
+        
+        if (!file) {
+            throw new Error('Tenes que subir una imagen')
+        } else {
+            let fileExtension = path.extname(file.originalname);
+            if(!acceptedExtensions.includes(fileExtension)){
+                throw new Error(`las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`); 
+    
+            }
+
+        }
+
+        return true; 
+    })
+]
 
 router.get('/', userControllers.index);
 
 
 
 // 3- necesito de rutas, una ruta que me resuelva el formulario (get).
-router.get('/register', userControllers.create)
+router.get('/register', userControllers.create);
+router.post('/register', upload.single('imagen'), registerValidations, userControllers.processRegister); 
+
 // 4- y otra ruta que me resuelva la insercion de ese usuario (post). 
 
 router.get('/users', userControllers.users); 
 //paso el nombre del input por el middleware
-router.post('/users', upload.single('imagen'), userControllers.store); 
+//router.post('/users', upload.single('imagen'), userControllers.store); 
 
 //---------
 

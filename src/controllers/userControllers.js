@@ -1,5 +1,7 @@
 const fs = require ('fs');
 const path = require ('path');
+const User = require('../models/User');
+const bcrypt = require('bcryptjs'); 
 
 
 const usersFilePath = path.join(__dirname, '../data/users.json')
@@ -19,26 +21,46 @@ const userControllers= {
         res.render('register'); 
     },
 
+    processRegister: function (req,res){
+        const errorsRegister = validationResult(req); 
+        if (errorsRegister.errors.length > 0) {
+            return res.render('register', {
+                errors: errorsRegister.mapped(),
+                //el metodo mapped convierte el array en un objeto literal donde cada objeto literal tiene a suvez sus propiedades. 
+                oldData: req.body
+
+            })
+        }
+
+        let userInDb = User.findByField('email',req.body.email); 
+
+        if(userInDb){
+            return res.render('register', {
+                errors: {
+                    email: {
+                        msg: 'Este email ya esta registrado'
+                    }
+                },
+                oldData: req.body
+            }); 
+
+        }
+
+        let userToCreate = {
+            ...req.body,
+            /* password: bcrypt.hashSync(req.body.password, 10), */
+            avatar: req.file.filename
+        }
+
+        let userCreated = User.create(userToCreate)
+
+        return res.redirect('login')
+
+    },
+
     users: function (req,res){
         res.render('users');
     }, 
-
-    store: function (req, res) {
-        const newusers = req.body
-        newusers.id =  Number(Math.random()*100000).toFixed(0);
-        newusers.firstname = req.body.firstname;
-        newusers.lastname = req.body.lastname;
-        newusers.username = req.body.username;
-        newusers.email = req.body.email;;
-        newusers.imagen = req.file.filename;
-
-        usersDB.push(newusers); 
-
-        fs.writeFileSync(usersFilePath, JSON.stringify(usersDB, null, ' ')); 
-
-        res.redirect('/users');
-         
-    },
   
     login: function (req,res){
         res.render('login');
@@ -53,18 +75,30 @@ const userControllers= {
                 oldData: req.body
 
             }); 
+
+        } else {
+
+            for (let i=0; i < usersDB.length; i++) {
+                if (usersDB[i].email == req.body.email){
+                    if (bcrypt.compareSync(req.body.password, usersDB[i].password)){
+                        let usuarioALoguearse = usersDB[i];
+                        break; 
+                    }
+                }
+    
+                if (usuarioALoguearse == undefined) {
+                    return res.render ('login', {errors: [
+                        {msg: 'Credenciales invalidas'}
+                    ]});
+                }
+    
+                req.session.usuarioLogueado = usuarioALoguearse;
+                res.render('/'); 
+    
+            }
+            
         }
-
-        res.redirect('/')
     }
-
-
-    /* register: function(req, res, next) {
-        res.render('register')
-    },
-    carrito: function(req,res, next){ 
-        res.render('carritoDeCompras')
-    } */
 }
 
 

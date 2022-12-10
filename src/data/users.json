@@ -1,184 +1,40 @@
 [
  {
   "id": 1,
-  "firstName": "mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis",
-  "lastName": "pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis",
-  "email": "gprendergast0@bbc.co.uk",
-  "password": "gQwlLtDS9FH",
-  "type": "Admin",
-  "avatar": "/images/avatars/tostada.jpg"
+  "fullname": "Mateo ",
+  "lastname": "Spinelli",
+  "username": "Solotrane",
+  "password": [
+   "2025030",
+   "2025030"
+  ],
+  "email": "mateospinelli@hotmail.com",
+  "category": "adminda"
  },
  {
   "id": 2,
-  "firstName": "diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum",
-  "lastName": "tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien",
-  "email": "sdeeman1@blogs.com",
-  "password": "yCmT5fQISC",
-  "type": "Admin",
-  "avatar": "/images/avatars/tostada.jpg"
+  "fullname": "Louise Beatriz",
+  "lastname": "Barreto da Silva",
+  "username": "LBtriz",
+  "password": [
+   "230946",
+   "230946"
+  ],
+  "email": "lsbtriz@hotmail.com",
+  "category": "admin",
+  "avatar": "undefined-1670677550284.jpg"
  },
  {
   "id": 3,
-  "firstName": "nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra",
-  "lastName": "pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis augue",
-  "email": "hschubuser2@creativecommons.org",
-  "password": "IJrZDOpgFln",
-  "type": "Customer",
-  "avatar": "/images/avatars/polloCorazon.jpg"
- },
- {
-  "id": 4,
-  "firstName": "curabitur in libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in",
-  "lastName": "morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam lacus morbi quis",
-  "email": "ohempel3@issuu.com",
-  "password": "47A4BuH",
-  "type": "Admin",
-  "avatar": "/images/avatars/tostada.jpg"
- },
- {
-  "id": 5,
-  "firstName": "magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien",
-  "lastName": "eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis sapien",
-  "email": "teverall4@shutterfly.com",
-  "password": "XudxEl9CNyg",
-  "type": "Customer",
-  "avatar": "/images/avatars/jala.jpg"
- },
- {
-  "id": 1669415733466,
-  "firstname": "Mateo",
-  "lastname": "Spinelli",
-  "username": "csdcsd",
+  "fullname": "Marina",
+  "lastname": "Diamandis",
+  "username": "mdiam",
   "password": [
-   "csdcsdcs",
-   "csdcsdcs"
+   "1223",
+   "1223"
   ],
-  "email": "mateospinelli@hotmail.com"
- },
- {
-  "id": 1669415851512,
-  "firstname": "xc",
-  "lastname": "xzbzxcb",
-  "username": "zxcbz",
-  "password": [
-   "xcbzcxbzcxb",
-   "zxcbz"
-  ],
-  "email": "mateospinelli@hotmail.com"
- },
- {
-  "id": 1669416306106,
-  "firstname": "sdvasdvad",
-  "lastname": "vadsva",
-  "username": "dsvasd",
-  "password": [
-   "vasvasdvasdvas",
-   "dvasdv"
-  ],
-  "email": "mateospinelli@hotmail.com"
- },
- {
-  "id": 1669416325591,
-  "firstname": "sdvasdvad",
-  "lastname": "vadsva",
-  "username": "dsvasd",
-  "password": [
-   "vasvasdvasdvas",
-   "dvasdv"
-  ],
-  "email": "mateospinelli@hotmail.com"
- },
- {
-  "id": 1669416356959,
-  "firstname": "sdvasdvad",
-  "lastname": "vadsva",
-  "username": "dsvasd",
-  "password": [
-   "vasvasdvasdvas",
-   "dvasdv"
-  ],
-  "email": "mateospinelli@hotmail.com"
- },
- {
-  "id": 1669416744904,
-  "firstname": "dv<sdv",
-  "lastname": "sdv<sdv",
-  "username": "<sdv<sdv<sdv<sdv<",
-  "password": [
-   "<svddsv",
-   "<dsv"
-  ],
-  "email": "mateospinelli@hotmail.com"
- },
- {
-  "id": 1669418205574,
-  "firstname": "Mateo",
-  "lastname": "Spinelli",
-  "username": "aergaergre",
-  "password": [
-   "reargaerg",
-   "aergergaergar"
-  ],
-  "email": "mateospinelli@hotmail.com"
- },
- {
-  "firstname": "mateo",
-  "lastname": "spinelli",
-  "username": "Admin",
-  "password": [
-   "klasndaskjo",
-   "fsahfaoishofa"
-  ],
-  "email": "msaoidmas@gmail.com",
-  "id": "90642",
-  "imagen": "undefined-1669419798465.jpg"
- },
- {
-  "firstname": "dasdas",
-  "lastname": "dasdas",
-  "username": "asdasdas",
-  "password": [
-   "dasdas",
-   "dasdas"
-  ],
-  "email": "dsadas@gmail.com",
-  "id": "5693",
-  "imagen": "undefined-1669420138379.jpg"
- },
- {
-  "firstname": "dasdas",
-  "lastname": "dasdasdas",
-  "username": "dasdsadsd",
-  "password": [
-   "asdasdasd",
-   "asdasdas"
-  ],
-  "email": "dasdas@gmail.com",
-  "id": "80095",
-  "imagen": "undefined-1669420354270.jpg"
- },
- {
-  "firstname": "ythd",
-  "lastname": "dfhsdds",
-  "username": "fghdfgsdcdsc",
-  "password": [
-   "hdfghdf",
-   "ghdfdsc"
-  ],
-  "email": "hgdfghd@hotmail.com",
-  "id": "34379",
-  "imagen": "undefined-1670265448858.jpg"
- },
- {
-  "firstname": "ythd",
-  "lastname": "dfhsdds",
-  "username": "fghdfgsdcdsc",
-  "password": [
-   "hdfghdf",
-   "ghdfdsc"
-  ],
-  "email": "hgdfghd@hotmail.com",
-  "id": "29681",
-  "imagen": "undefined-1670265603359.jpg"
+  "email": "mdiamandis@hotmail.com",
+  "category": "mdiamandis@hotmail.com",
+  "avatar": "undefined-1670681414258.jpg"
  }
 ]
