@@ -4,6 +4,10 @@ const router = express.Router();
 const path = require ('path');
 
 
+//Midllewares
+const guestMiddleware = require ('../middlewares/guestMiddleware');
+const authMiddleware = require ('../middlewares/authMiddleware')
+
 // 2- Requiero mi archivo de controladores. 
 const userControllers = require('../controllers/userControllers');
 //requiero multer en el archivo 
@@ -67,7 +71,7 @@ router.get('/', userControllers.index);
 
 
 // 3- necesito de rutas, una ruta que me resuelva el formulario (get).
-router.get('/register', userControllers.create);
+router.get('/register', guestMiddleware, userControllers.create);
 router.post('/register', upload.single('imagen'), registerValidations, userControllers.processRegister); 
 
 // 4- y otra ruta que me resuelva la insercion de ese usuario (post). 
@@ -76,12 +80,14 @@ router.get('/users', userControllers.users);
 //paso el nombre del input por el middleware
 //router.post('/users', upload.single('imagen'), userControllers.store); 
 
-//---------
+router.get('/login', guestMiddleware, userControllers.login),
 
-router.get('/login', userControllers.login),
+router.get('/userProfile', authMiddleware, userControllers.profile), 
 
 //procesar el login 
 router.post('/login', validations, userControllers.processLogIn),
+
+router.get('/logout', userControllers.logout) 
 
 
 

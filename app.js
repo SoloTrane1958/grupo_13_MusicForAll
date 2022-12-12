@@ -2,6 +2,12 @@ var createError = require('http-errors');
 var express = require('express');
 const methodOverride = require('method-override');
 
+//requiero session 
+const session = require('express-session'); 
+
+//middlewares
+const userLoggedMiddleware = require('./src/middlewares/userLoggedMiddleware'); 
+
 
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -25,6 +31,17 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static('public'));
+
+//2- paso el session como middleware de aplicacion y va a ser una funcion que recibe un objeto literal con una propiedad secret que puede tener cualquier cosa. Objeto literal en el req donde voy a guardar el usuario. 
+
+
+app.use(userLoggedMiddleware); 
+
+app.use(session({
+  secret: 'shhh, es un secreto',
+  resave: false, 
+  saveUninitialized: false,
+})); 
 
 
 app.listen(3000, ()=>{

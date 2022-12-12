@@ -4,25 +4,9 @@
   "fullname": "Mateo ",
   "lastname": "Spinelli",
   "username": "Solotrane",
-  "password": [
-   "2025030",
-   "2025030"
-  ],
+  "password": "2025030",
   "email": "mateospinelli@hotmail.com",
   "category": "adminda"
- },
- {
-  "id": 2,
-  "fullname": "Louise Beatriz",
-  "lastname": "Barreto da Silva",
-  "username": "LBtriz",
-  "password": [
-   "230946",
-   "230946"
-  ],
-  "email": "lsbtriz@hotmail.com",
-  "category": "admin",
-  "avatar": "undefined-1670677550284.jpg"
  },
  {
   "id": 3,
@@ -30,11 +14,40 @@
   "lastname": "Diamandis",
   "username": "mdiam",
   "password": [
-   "1223",
    "1223"
   ],
   "email": "mdiamandis@hotmail.com",
   "category": "mdiamandis@hotmail.com",
   "avatar": "undefined-1670681414258.jpg"
+ },
+ {
+  "id": 4,
+  "fullname": "Juan",
+  "lastname": "Juarez",
+  "username": "JJelmejor",
+  "password": "12345678",
+  "email": "jjelmejor@hotmail.com",
+  "category": "jjelmejor@hotmail.com",
+  "avatar": "undefined-1670853585809.jpg"
+ },
+ {
+  "id": 5,
+  "fullname": "Romina",
+  "lastname": "Rominelli ",
+  "username": "RRlamejor",
+  "password": "$2a$10$jC9AZseadcCRraIsan.xzufYv/RhzgpKNQH9r9ZNK/cpOuoVb0ve.",
+  "email": "RRelmejor@hotmail.com",
+  "category": "Admin",
+  "avatar": "undefined-1670853664988.jpg"
+ },
+ {
+  "id": 6,
+  "fullname": "Louise Beatriz",
+  "lastname": "Barreto da Silva",
+  "username": "LouLaMejor",
+  "password": "$2a$10$3Z.KrL1DQXrXfOWcGpi6DOdaaZV7fv/ppfNvjSJ2pNUpFYk2f2MN.",
+  "email": "LouiseBeatriz@hotmail.com",
+  "category": "admin",
+  "avatar": "undefined-1670853967535.jpg"
  }
 ]

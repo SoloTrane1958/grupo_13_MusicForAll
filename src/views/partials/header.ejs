@@ -28,7 +28,8 @@
                     </form>
                 </div>
 
-
+                <% if (locals.islogged) { %>
+                 
                 <div class="utilities-container">
 
                     <div class="utilities-item d-none d-md-inline-block ">
@@ -76,6 +77,43 @@
                    
 
                 </div>
+
+                <% } else { %>
+
+                    <div class="utilities-container">
+
+                        <div class="utilities-item d-none d-md-inline-block ">
+    
+                            <div class="text-center">
+                                <a href="#" class="carrito">
+                                    <i class="fa-solid fa-circle-info"></i>
+                                </a>
+        
+                                <span class="utilities-text">Ayuda</span>
+    
+                            </div>
+        
+                        </div>
+    
+                        <div class="utilities-item d-none d-md-inline-block">
+                            <div class="text-center">
+                                <a href="#" class="carrito">
+                                    <i class="fa-solid fa-user"></i>
+                                </a>
+    
+                                <span class="utilities-text">Ingresar</span>
+    
+                            </div>
+            
+        
+                        </div>
+    
+                       
+    
+                    </div>
+
+                <% } %>
+
 
 
                 

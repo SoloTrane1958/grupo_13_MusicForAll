@@ -48,7 +48,7 @@ const userControllers= {
 
         let userToCreate = {
             ...req.body,
-            /* password: bcrypt.hashSync(req.body.password, 10), */
+            password: bcrypt.hashSync(req.body.password, 10), 
             avatar: req.file.filename
         }
 
@@ -67,7 +67,7 @@ const userControllers= {
     },
 
     processLogIn: function (req,res) {
-        const resultValidation = validationResult(req);
+        /* const resultValidation = validationResult(req);
         
         if (resultValidation.errors.length > 0){
             return res.render('login', {
@@ -97,7 +97,52 @@ const userControllers= {
     
             }
             
+        } */
+
+        let userToLogIn = User.findByField('email', req.body.email);
+
+        if (userToLogIn) {
+
+            let isOkThePassword = bcrypt.compareSync(req.body.password, userToLogIn.password)
+
+            if(isOkThePassword){
+                //creo una propiedad en session que va a tener la informacion del usuario a loguearse.
+                //borro la contraseña para no matenerla en la session del usuario
+                delete userToLogIn.password;
+                req.session.userLogged = userToLogIn; 
+                return res.redirect('userProfile')
+            }
+            
+            return res.render('login', {
+                errors: {
+                    email: {
+                        msg: 'Las credenciales son invalidas'
+                    }
+                }
+            })
+
         }
+
+        return res.render ('login', {
+            errors: {
+                email: {
+                    msg: 'No se encuentra este email en nuestra base de datos '
+                }
+            }
+        })
+
+    },
+
+    profile: (req, res)=> {
+        return res.render('userProfile', {
+            user: req.session.userLogged
+        });  
+
+    },
+
+    logout: (req, res) => {
+        req.session.destroy();
+        return res.redirect('/')
     }
 }
 
