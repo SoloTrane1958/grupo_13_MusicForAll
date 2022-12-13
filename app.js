@@ -4,13 +4,14 @@ const methodOverride = require('method-override');
 
 //requiero session 
 const session = require('express-session'); 
+//le session se graba del lado del servidor mientras que las cookies se guardan del lado del navegador. 
+var cookies = require('cookie-parser');
 
 //middlewares
 const userLoggedMiddleware = require('./src/middlewares/userLoggedMiddleware'); 
 
 
 var path = require('path');
-var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 
@@ -29,7 +30,6 @@ app.use(logger('dev'));
 app.use(express.json());
 //permite capturar la informacion que se envia via post en el req.body
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(express.static('public'));
 
 //2- paso el session como middleware de aplicacion y va a ser una funcion que recibe un objeto literal con una propiedad secret que puede tener cualquier cosa. Objeto literal en el req donde voy a guardar el usuario. 
@@ -40,6 +40,8 @@ app.use(session({
   resave: false, 
   saveUninitialized: false,
 })); 
+
+app.use(cookies());
 
 app.use(userLoggedMiddleware); 
 

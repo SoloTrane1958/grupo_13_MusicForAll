@@ -67,38 +67,7 @@ const userControllers= {
     },
 
     processLogIn: function (req,res) {
-        /* const resultValidation = validationResult(req);
-        
-        if (resultValidation.errors.length > 0){
-            return res.render('login', {
-                errors: resultValidation.mapped(),
-                oldData: req.body
-
-            }); 
-
-        } else {
-
-            for (let i=0; i < usersDB.length; i++) {
-                if (usersDB[i].email == req.body.email){
-                    if (bcrypt.compareSync(req.body.password, usersDB[i].password)){
-                        let usuarioALoguearse = usersDB[i];
-                        break; 
-                    }
-                }
-    
-                if (usuarioALoguearse == undefined) {
-                    return res.render ('login', {errors: [
-                        {msg: 'Credenciales invalidas'}
-                    ]});
-                }
-    
-                req.session.usuarioLogueado = usuarioALoguearse;
-                res.render('/'); 
-    
-            }
-            
-        } */
-
+       
         let userToLogIn = User.findByField('email', req.body.email);
 
         if (userToLogIn) {
@@ -109,7 +78,11 @@ const userControllers= {
                 //creo una propiedad en session que va a tener la informacion del usuario a loguearse.
                 //borro la contraseña para no matenerla en la session del usuario
                 delete userToLogIn.password;
-                req.session.userLogged = userToLogIn; 
+                req.session.userLogged = userToLogIn;
+                
+                if(req.body.remember_user){
+                    res.cookie('userEmail', req.body.email, {maxAge: (1000 * 60) * 60})
+                }
                 return res.redirect('userProfile')
             }
             
@@ -141,6 +114,7 @@ const userControllers= {
     },
 
     logout: (req, res) => {
+        res.clearCookie('userEmail'); 
         req.session.destroy();
         return res.redirect('/')
     }
