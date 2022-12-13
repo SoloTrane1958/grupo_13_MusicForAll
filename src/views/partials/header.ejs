@@ -28,9 +28,8 @@
                     </form>
                 </div>
 
-                <% if (locals.islogged) { %>
-                 
-                <div class="utilities-container">
+                <% if (locals.isLogged) { %>
+                    <div class="utilities-container">
 
                     <div class="utilities-item d-none d-md-inline-block ">
 
@@ -47,11 +46,9 @@
 
                     <div class="utilities-item d-none d-md-inline-block">
                         <div class="text-center">
-                            <a href="#" class="carrito">
-                                <i class="fa-solid fa-user"></i>
-                            </a>
+                            <img src="/imagenes/<%=locals.userLogged.avatar%>" alt="" width="40" style="border-radius: 100;">
 
-                            <span class="utilities-text">Mi cuenta</span>
+                            <span class="utilities-text"><%= locals.userLogged.fullname %></span>
 
                         </div>
         
